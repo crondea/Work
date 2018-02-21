@@ -1,0 +1,9 @@
+Testing Desktop Serial Number:
+	* Machine is built from various components rather than bought as one unit. Therefore, it has no serial number in the BIOS.
+		Executing "wmic bios get serialnumber" simply returns "To be filled by OEM" string. This same string is also returned
+		when executing the code that retrieves the serial number from the "Win32_BIOS" "SerialNumber" field. We might be able
+		to use this string as if it returned an actual serial number if we combine it with other returned values below.
+	* Executing the code that retrieves the motherboard serial number from "Win32_BaseBoard" returns a string of numbers,
+		"13120225901675". This could be useful for getting a UUID.
+	* Executing the code that retrieves the processor serial number had a similar result to the machine serial number. The code
+		returned "To Be Filled By O.E.M.".
